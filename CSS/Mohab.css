@@ -155,7 +155,7 @@ ul {
 }
 
 .dots {
-    background-image: url("../imgs/dots.png");
+    background-image: url("../Images/dots.png");
     height: 186px;
     width: 204px;
     background-repeat: no-repeat;
@@ -1164,3 +1164,295 @@ p {
 
 /* End Work Steps */
 /* Start Events */
+.events {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.events .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.events img {
+    max-width: 450px;
+}
+
+@media (max-width: 991px) {
+    .events img {
+        display: none;
+    }
+}
+
+.events .info {
+    flex: 1;
+}
+
+.events .info .time {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+    justify-content: center;
+}
+
+.events .info .time .unit {
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    text-align: center;
+    width: 75px;
+    transition: var(--main-transition);
+}
+
+.events .info .time .unit span {
+    display: block;
+    transition: var(--main-transition);
+}
+
+.events .info .time .unit span:first-child {
+    font-size: 35px;
+    padding: 15px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.events .info .time .unit span:last-child {
+    padding: 8px 10px;
+    font-size: 13px;
+    border-top: 1px solid #d4d4d4;
+}
+
+.events .info .time .unit:hover,
+.events .info .time .unit:hover span:last-child {
+    border-color: var(--main-color);
+}
+
+.events .title {
+    text-align: center;
+    margin: 40px 0 0;
+    font-size: 30px;
+}
+
+.events .description {
+    text-align: center;
+    line-height: 1.7;
+    font-size: 19px;
+    color: #777;
+}
+
+.events .subscribe {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.events .subscribe form {
+    width: 600px;
+    margin: 20px auto;
+    padding: 30px 40px;
+    background-color: #f6f5f5;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .events .subscribe form {
+        max-width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        border-radius: 0;
+    }
+}
+
+.events .subscribe form input[type="email"] {
+    padding: 20px;
+    border-radius: 50px;
+    border: none;
+    flex: 1;
+    caret-color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+    .events .subscribe form input[type="email"] {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 1290px) {
+    .events .dots {
+        display: none;
+    }
+}
+
+.events .subscribe form input[type="email"]:focus {
+    outline: none;
+}
+
+.events .subscribe form input[type="email"]::placeholder {
+    transition: opacity var(--main-transition);
+}
+
+.events .subscribe form input[type="email"]:focus::placeholder {
+    opacity: 0;
+}
+
+.events .subscribe form input[type="submit"] {
+    border-radius: 50px;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+@media (max-width: 767px) {
+    .events .subscribe form input[type="submit"] {
+        border-radius: 0;
+    }
+}
+
+.events .subscribe form input[type="submit"]:hover {
+    background-color: var(--main-color-alt);
+}
+
+/* End Events */
+/* Start Pricing */
+.pricing {
+    background-color: var(--section-background);
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+}
+
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pricing .container .box {
+    background-color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+}
+
+.pricing .container .box::before {
+    content: "";
+    background-color: #f6f6f6;
+    width: 0;
+    height: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.pricing .container .box::after {
+    content: "";
+    background-color: #f6f6f6;
+    width: 0;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+    width: 100%;
+}
+
+.pricing .container .box .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.pricing .container .box img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.pricing .container .box .price {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px #f6f5f5 solid;
+    padding-bottom: 15px;
+}
+
+.pricing .container .box .price span:first-child {
+    font-size: 50px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.pricing .container .popular {
+    position: relative;
+}
+
+@media (min-width:1192px) {
+    .pricing .container .popular {
+        transform: translateY(-20px);
+    }
+}
+
+.pricing .container .popular .label {
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 30px 10px 10px;
+    text-align: left;
+    transform: rotate(90deg);
+    right: -30px;
+    top: 45px;
+    font-weight: bold;
+}
+
+.pricing .container .popular .label::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+    border-width: 20px;
+}
+
+.pricing .box:hover .label::after {
+    border-color: transparent #f6f6f6 transparent transparent;
+}
+
+.pricing .container .box ul li {
+    display: block;
+    padding: 20px;
+    text-align: left;
+}
+
+.pricing .container .box ul li:not(:last-child) {
+    border-bottom: 2px #f6f5f5 solid;
+}
+
+.pricing .container .box ul i {
+    margin-right: 7px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.pricing .container .box a {
+    display: block;
+    padding: 20px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    margin: 30px auto;
+    width: fit-content;
+    border-radius: 10px;
+    font-weight: bold;
+}
